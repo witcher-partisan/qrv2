@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic V2 vCard</title>
+    <script src="https://kit.fontawesome.com/5992eb26d9.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="page_shell">
+        <header class="brand_header">
+            <div class="logo_wrap">
+                <img src="./Images/Miele_Logo_M_Red_sRGB.svg" alt="Miele logo">
+            </div>
+        </header>
+
+        <div class="top_controls">
+            <div class="switch" aria-label="Language switcher">
+                <button class="en active" type="button" aria-pressed="true">EN</button>
+                <button class="ar" type="button" aria-pressed="false">AR</button>
+            </div>
+        </div>
+
+        <section class="vcard_body load-in" aria-label="Digital business card">
+            <div class="identity_block">
+                <div class="vcard_image"><img src="./Images/Screenshot 2026-02-28 013730.png" alt="Imtiaz Akhtar"></div>
+                <h1 class="vcard_name">Imtiaz Akhtar</h1>
+                <p class="vcard_title">IT Admin</p>
+                <p class="vcard_company">Miele Appliances AG (Miele Appliances Ltd.)</p>
+            </div>
+
+            <div class="floating_button" aria-label="Quick actions">
+                <a class="vcard_call" href="tel:+971549966320"><i class="fa-solid fa-phone" aria-hidden="true"></i><span>Dial</span></a>
+                <a class="vcard_add_to_contacts" id="addContactBtn" href="#"><i class="fa-solid fa-user-plus" aria-hidden="true"></i><span>Add Contact</span></a>
+                <a class="vcard_email" href="mailto:imtiaz.akhtar.ext@miele.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span>Email</span></a>
+                <a class="vcard_whatsapp" href="https://wa.me/971549966320" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>Whatsapp</span></a>
+            </div>
+
+            <section class="info_panel phone reveal" aria-label="Contact numbers">
+                <h2><i class="fa-solid fa-address-book" aria-hidden="true"></i> Contact Us</h2>
+                <div class="contact_list">
+                    <a class="contact_item" href="tel:+971549966320">
+                        <span><i class="fa-solid fa-phone" aria-hidden="true"></i> Phone</span>
+                        <p class="vcard_phone_pri">+971 54 996 6320</p>
+                    </a>
+                    <a class="contact_item" href="https://wa.me/971549966320" target="_blank" rel="noopener noreferrer">
+                        <span><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Whatsapp</span>
+                        <p class="vcard_wp">+971 54 996 6320</p>
+                    </a>
+                    <a class="contact_item" href="tel:80064353">
+                        <span><i class="fa-solid fa-phone-volume" aria-hidden="true"></i> Toll-Free</span>
+                        <p class="vcard_phone_sec">800 MIELE</p>
+                    </a>
+                </div>
+            </section>
+
+            <section class="info_panel email reveal" aria-label="Email contacts">
+                <h2><i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i> Email</h2>
+                <div class="email_list">
+                    <a class="email_item" href="mailto:imtiaz.akhtar.ext@miele.com" target="_blank" rel="noopener noreferrer">
+                        <span><i class="fa-solid fa-at" aria-hidden="true"></i> My Email</span>
+                        <p class="vcard_email_pri">imtiaz.akhtar.ext@miele.com</p>
+                    </a>
+                    <a class="email_item" href="mailto:info@miele.ae" target="_blank" rel="noopener noreferrer">
+                        <span><i class="fa-solid fa-circle-question" aria-hidden="true"></i> For Inquiries</span>
+                        <p class="vcard_email_sec">info@miele.ae</p>
+                    </a>
+                </div>
+            </section>
+
+            <section class="info_panel address reveal" aria-label="Office address">
+                <h2><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Address</h2>
+                <p class="vcard_address_line1">Showroom 1, Eiffel 1, Shaikh Zaid Road, Umm Al Shief Dubai, PO Box 12345</p>
+                <a class="directions" href="https://www.google.com/maps/search/?api=1&query=Showroom%201%2C%20Eiffel%201%2C%20Shaikh%20Zaid%20Road%2C%20Umm%20Al%20Shief%20Dubai" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> View on Map</a>
+            </section>
+
+            <section class="info_panel social reveal" aria-label="Social links">
+                <h2><i class="fa-solid fa-globe" aria-hidden="true"></i> Explore Miele Appliances</h2>
+                <a href="https://www.miele.ae" target="_blank" rel="noopener noreferrer" class="vcard_website"><i class="fa-solid fa-link" aria-hidden="true"></i> https://www.miele.ae</a>
+                <a href="https://www.facebook.com/miele" target="_blank" rel="noopener noreferrer" class="vcard_fb"><i class="fa-brands fa-facebook" aria-hidden="true"></i> https://www.facebook.com/miele</a>
+                <a href="https://www.instagram.com/miele" target="_blank" rel="noopener noreferrer" class="vcard_instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i> https://www.instagram.com/miele</a>
+            </section>
+        </section>
+    </main>
+<script>
+    const header = document.querySelector(".brand_header");
+    const onScroll = () => {
+        if (!header) return;
+        header.classList.toggle("is-scrolled", window.scrollY > 8);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    const revealItems = document.querySelectorAll(".reveal");
+    const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+            });
+        },
+        { threshold: 0.15 }
+    );
+    revealItems.forEach((item) => revealObserver.observe(item));
+
+    const enBtn = document.querySelector(".switch .en");
+    const arBtn = document.querySelector(".switch .ar");
+    const addContactBtn = document.getElementById("addContactBtn");
+
+    const setHtml = (selector, value) => {
+        const el = document.querySelector(selector);
+        if (el) el.innerHTML = value;
+    };
+
+    const setText = (selector, value) => {
+        const el = document.querySelector(selector);
+        if (el) el.textContent = value;
+    };
+
+    const translations = {
+        en: {
+            lang: "en",
+            dir: "ltr",
+            name: "Imtiaz Akhtar",
+            title: "IT Admin",
+            company: "Miele Appliances AG (Miele Appliances Ltd.)",
+            call: "Dial",
+            addContact: "Add Contact",
+            emailCta: "Email",
+            whatsappCta: "Whatsapp",
+            contactHeading: '<i class="fa-solid fa-address-book" aria-hidden="true"></i> Contact Us',
+            phoneLabel: '<i class="fa-solid fa-phone" aria-hidden="true"></i> Phone',
+            whatsappLabel: '<i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Whatsapp',
+            tollfreeLabel: '<i class="fa-solid fa-phone-volume" aria-hidden="true"></i> Toll-Free',
+            emailHeading: '<i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i> Email',
+            myEmailLabel: '<i class="fa-solid fa-at" aria-hidden="true"></i> My Email',
+            inquiryLabel: '<i class="fa-solid fa-circle-question" aria-hidden="true"></i> For Inquiries',
+            addressHeading: '<i class="fa-solid fa-location-dot" aria-hidden="true"></i> Address',
+            addressLine: "Showroom 1, Eiffel 1, Shaikh Zaid Road, Umm Al Shief Dubai, PO Box 12345",
+            mapBtn: '<i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> View on Map',
+            socialHeading: '<i class="fa-solid fa-globe" aria-hidden="true"></i> Explore Miele Appliances'
+        },
+        ar: {
+            lang: "ar",
+            dir: "rtl",
+            name: "امتياز أختر",
+            title: "مسؤول تقنية المعلومات",
+            company: "ميلي للأجهزة المنزلية (الشرق الأوسط)",
+            call: "اتصال",
+            addContact: "إضافة جهة اتصال",
+            emailCta: "بريد إلكتروني",
+            whatsappCta: "واتساب",
+            contactHeading: '<i class="fa-solid fa-address-book" aria-hidden="true"></i> تواصل معنا',
+            phoneLabel: '<i class="fa-solid fa-phone" aria-hidden="true"></i> الهاتف',
+            whatsappLabel: '<i class="fa-brands fa-whatsapp" aria-hidden="true"></i> واتساب',
+            tollfreeLabel: '<i class="fa-solid fa-phone-volume" aria-hidden="true"></i> الرقم المجاني',
+            emailHeading: '<i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i> البريد الإلكتروني',
+            myEmailLabel: '<i class="fa-solid fa-at" aria-hidden="true"></i> بريدي الإلكتروني',
+            inquiryLabel: '<i class="fa-solid fa-circle-question" aria-hidden="true"></i> للاستفسارات',
+            addressHeading: '<i class="fa-solid fa-location-dot" aria-hidden="true"></i> العنوان',
+            addressLine: "صالة عرض 1، إيفل 1، شارع الشيخ زايد، أم الشيف، دبي، ص.ب 12345",
+            mapBtn: '<i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> عرض على الخريطة',
+            socialHeading: '<i class="fa-solid fa-globe" aria-hidden="true"></i> استكشف أجهزة ميلي'
+        }
+    };
+
+    const applyLanguage = (langKey) => {
+        const copy = translations[langKey] || translations.en;
+        document.documentElement.lang = copy.lang;
+        document.documentElement.dir = copy.dir;
+
+        setText(".vcard_title", copy.title);
+        setText(".vcard_name", copy.name);
+        setText(".vcard_company", copy.company);
+        setText(".vcard_call span", copy.call);
+        setText(".vcard_add_to_contacts span", copy.addContact);
+        setText(".vcard_email span", copy.emailCta);
+        setText(".vcard_whatsapp span", copy.whatsappCta);
+
+        setHtml(".phone h2", copy.contactHeading);
+        setHtml(".phone .contact_item:nth-child(1) span", copy.phoneLabel);
+        setHtml(".phone .contact_item:nth-child(2) span", copy.whatsappLabel);
+        setHtml(".phone .contact_item:nth-child(3) span", copy.tollfreeLabel);
+
+        setHtml(".email h2", copy.emailHeading);
+        setHtml(".email .email_item:nth-child(1) span", copy.myEmailLabel);
+        setHtml(".email .email_item:nth-child(2) span", copy.inquiryLabel);
+
+        setHtml(".address h2", copy.addressHeading);
+        setText(".vcard_address_line1", copy.addressLine);
+        setHtml(".directions", copy.mapBtn);
+        setHtml(".social h2", copy.socialHeading);
+
+        const isArabic = langKey === "ar";
+        enBtn.classList.toggle("active", !isArabic);
+        arBtn.classList.toggle("active", isArabic);
+        enBtn.setAttribute("aria-pressed", String(!isArabic));
+        arBtn.setAttribute("aria-pressed", String(isArabic));
+
+        localStorage.setItem("vcard_lang", langKey);
+    };
+
+    enBtn?.addEventListener("click", () => applyLanguage("en"));
+    arBtn?.addEventListener("click", () => applyLanguage("ar"));
+
+    const vcardText = `BEGIN:VCARD
+VERSION:3.0
+N:Akhtar;Imtiaz;;;
+FN:Imtiaz Akhtar
+ORG:Miele Appliances AG (Miele Appliances Ltd.)
+TITLE:IT Admin
+TEL;TYPE=CELL:+971549966320
+TEL;TYPE=WORK,VOICE:800 MIELE
+EMAIL;TYPE=WORK:imtiaz.akhtar.ext@miele.com
+EMAIL;TYPE=INTERNET:info@miele.ae
+URL:https://www.miele.ae
+ADR;TYPE=WORK:;;Showroom 1, Eiffel 1, Shaikh Zaid Road, Umm Al Shief;Dubai;;;United Arab Emirates
+END:VCARD`;
+
+    const openVcfFallback = () => {
+        const blob = new Blob([vcardText], { type: "text/vcard;charset=utf-8" });
+        const blobUrl = URL.createObjectURL(blob);
+        window.location.href = blobUrl;
+        setTimeout(() => URL.revokeObjectURL(blobUrl), 3000);
+    };
+
+    addContactBtn?.addEventListener("click", async (event) => {
+        event.preventDefault();
+        try {
+            const vcfFile = new File([vcardText], "imtiaz-akhtar.vcf", { type: "text/vcard" });
+            if (navigator.canShare && navigator.canShare({ files: [vcfFile] })) {
+                await navigator.share({
+                    files: [vcfFile],
+                    title: "Imtiaz Akhtar",
+                    text: "Add this contact"
+                });
+                return;
+            }
+        } catch (error) {
+            console.warn("Native contact share fallback:", error);
+        }
+        openVcfFallback();
+    });
+
+    const savedLang = localStorage.getItem("vcard_lang");
+    applyLanguage(savedLang === "ar" ? "ar" : "en");
+</script>
+</body>
+</html>
